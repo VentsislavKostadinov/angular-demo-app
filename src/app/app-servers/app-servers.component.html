@@ -1,2 +1,22 @@
+<app-server></app-server>
 <h3>app-servers works!</h3>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Click</button>
+<p>{{serverCreationStatus}}</p>
 <hr />
+<input
+type="text"
+class="form-control"
+(input) = "onUpdateServerName($event)"
+/>
+<br />
+<p>{{serverName}}</p>
+<hr />
+<h3>Using ngModule</h3>
+<input
+type="text"
+class="form-control"
+ [(ngModel)]="serverName"
+/>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Click</button>
+
+<p>{{serverCreationStatus}}</p>
