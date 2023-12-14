@@ -1,2 +1,7 @@
-<h3>A server component! {{serverId}}: {{serverStatus}}</h3>
-<h3>A server component! {{serverId}}: {{getServerStatus()}}</h3>
+<!--ngStyle for dynamically styling-->
+<h3 [ngStyle]="{backgroundColor: getColor()}">ngStyle styling: server component! {{serverId}}: {{getServerStatus()}}
+</h3>
+
+<!--ngClass for dynamically styling-->
+<h3 [ngClass]="{online: serverStatus === 'online', offline: serverStatus !== 'online'}">ngClass styling: server
+    component! {{serverId}}: {{getServerStatus()}}</h3>
